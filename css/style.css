@@ -1,0 +1,253 @@
+:root {
+    --bg-color: #EFEBE9;       
+    --container-bg: #FFFFFF;   
+    --text-main: #3E2723;      
+    --text-secondary: #5D4037; 
+    --accent: #8D6E63;         
+    --accent-hover: #6D4C41;   
+    --border: #D7CCC8;         
+    --font-main: 'Georgia', serif;
+    --font-ui: 'Helvetica Neue', Arial, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: var(--font-ui);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: var(--text-main);
+    color: var(--bg-color);
+    padding: 15px 0;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header a {
+    color: var(--bg-color);
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-main);
+    color: var(--text-main);
+}
+
+.card {
+    background: var(--container-bg);
+    border: 1px solid var(--border);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--accent);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn:hover {
+    background-color: var(--accent-hover);
+}
+
+.btn-small {
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--border);
+    background: #FAFAFA;
+    font-family: var(--font-ui);
+    box-sizing: border-box;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--text-secondary);
+}
+
+.tags-list a {
+    display: inline-block;
+    background: var(--border);
+    color: var(--text-main);
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    text-decoration: none;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.tags-list a:hover {
+    background: var(--accent);
+    color: white;
+}
+
+.meta {
+    font-size: 0.85em;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.comment {
+    border-left: 3px solid var(--accent);
+    padding-left: 15px;
+    margin-bottom: 15px;
+    background: #FAFAFA;
+    padding: 10px;
+}
+.posts-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.posts-grid .card {
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.posts-grid .card p {
+    flex-grow: 1;
+}
+
+.main-layout {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.main-layout .content {
+    flex: 3;
+}
+
+.main-layout .sidebar {
+    flex: 1;
+    background: #fff;
+    padding: 15px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    height: fit-content;
+    position: sticky;
+    top: 20px;
+}
+
+.post-content {
+    text-align: left;
+    line-height: 1.7;
+    margin: 5px 0;
+    word-wrap: break-word;
+}
+
+.post-content p {
+    margin: 0 0 15px 0;
+}
+
+.comment {
+    border-left: 3px solid var(--accent);
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    background: #FAFAFA;
+    border-radius: 0 4px 4px 0;
+}
+
+.comment p {
+    margin: 8px 0 0 0;
+    line-height: 1.5;
+}
+
+.comment strong {
+    color: var(--text-main);
+}
+
+.comment small {
+    color: var(--text-secondary);
+    margin-left: 10px;
+}
+
+.meta {
+    font-size: 0.85em;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.meta a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.meta a:hover {
+    text-decoration: underline;
+}
+
+.post-actions {
+    margin-top: 20px;
+    border-top: 1px solid var(--border);
+    padding-top: 15px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.comment-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-family: var(--font-ui);
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+.comment-form .btn {
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .main-layout {
+        flex-direction: column;
+    }
+    
+    .main-layout .sidebar {
+        position: static;
+    }
+}
